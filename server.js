@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
+require('dotenv').config()
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}).then(res => console.log("Connected to DB"))
 .catch(err => console.log(err))
@@ -23,6 +24,6 @@ require('./controllers/quizzes-controller')(app)
 require('./controllers/questions-controller')(app)
 require('./controllers/quiz-attempts-controller')(app)
 
-app.listen(process.env.PORT || 4000)
+app.listen(process.env.PORT||4000)
 
 

@@ -16,6 +16,7 @@ app.use(function (req, res, next) {
       'Content-Type, X-Requested-With, Origin');
   res.header('Access-Control-Allow-Methods',
       'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
